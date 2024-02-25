@@ -51,6 +51,11 @@ function displayRegistrations(registrations) {
     }
 }
 
+// Function to clear all registrations
+document.getElementById("clearButton").addEventListener("click", function() {
+    localStorage.removeItem("registrations");
+    document.getElementById("registrationInfo").innerHTML = "<h2>All Registrations:</h2><p>No registrations yet.</p>";
+});
 // Initial display of registrations when the page loads
 var initialRegistrations = JSON.parse(localStorage.getItem("registrations")) || [];
 displayRegistrations(initialRegistrations);
